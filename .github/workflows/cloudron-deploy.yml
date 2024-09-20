@@ -24,6 +24,7 @@ jobs:
             --token ${{ secrets.CLOUDRON_TOKEN }} \
             --app ${{ secrets.CLOUDRON_APP }} \
             --image ${{ secrets.DOCKER_IMAGE }}"
+
           # Retry up to 5 times (with linear backoff)
           NEXT_WAIT_TIME=0
           until [ $NEXT_WAIT_TIME -eq 5 ] || $update; do
